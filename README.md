@@ -16,15 +16,14 @@ A prototype wireframe of all 3 screens is provided as a guideline. You are free 
 ![](wireframe.png)
 
 ### What we are looking for
+ - **Showcase what you can do. It can be a refined UI, or enhanced UX, or use of specific design patterns in the code, or anything that can make the project stand out.**
  - Demonstration of coding style, conventions and patterns.
+ - A tidy code organisation.
  - Use of autolayout (preferably UIKit).
  - Implementation of unit tests.
  - Any accessibility feature would be a bonus.
  - The application must run on iOS 13 or later.
- - The application must compile and run on Xcode and be debugged in Xcode's iOS simulator.
  - Any 3rd party library should be integrated using Swift Package Manager.
- - No persistence of the user is required.
- - Showcase what you can do.
 
 ### API Usage
 The Networking methods and Models for requests and responses are ready-made in the Networking module of the project.
