@@ -6,6 +6,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,13 +18,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="moneybox" translatesAutoresizingMaskIntoConstraints="NO" id="eol-3X-9hl">
-                                <rect key="frame" x="105" y="231" width="205" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hwG-yM-Cgm">
+                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6tW-cv-bYJ" userLabel="Logo View">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="179.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moneybox" translatesAutoresizingMaskIntoConstraints="NO" id="eol-3X-9hl">
+                                                <rect key="frame" x="100" y="67" width="214" height="112.5"/>
+                                            </imageView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="eol-3X-9hl" secondAttribute="bottom" id="0yz-oP-Smq"/>
+                                            <constraint firstAttribute="trailing" secondItem="eol-3X-9hl" secondAttribute="trailing" constant="100" id="2Yi-DM-fYT"/>
+                                            <constraint firstAttribute="bottom" secondItem="eol-3X-9hl" secondAttribute="bottom" id="KE6-yp-VJs"/>
+                                            <constraint firstItem="eol-3X-9hl" firstAttribute="leading" secondItem="6tW-cv-bYJ" secondAttribute="leading" constant="100" id="TRe-IF-bqc"/>
+                                            <constraint firstItem="eol-3X-9hl" firstAttribute="top" secondItem="6tW-cv-bYJ" secondAttribute="top" constant="67" id="h5M-FY-wcq"/>
+                                        </constraints>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="Exi-8t-teZ" userLabel="Username and Password text field">
+                                        <rect key="frame" x="0.0" y="179.5" width="414" height="594.5"/>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aax-Vf-4Df">
+                                                <rect key="frame" x="20" y="0.0" width="374" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="PFj-UJ-D6Y"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VvN-bX-6QO">
+                                                <rect key="frame" x="20" y="70" width="374" height="45"/>
+                                                <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="hZJ-Mf-WJu"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F3B-L1-slD">
+                                                <rect key="frame" x="20" y="140" width="374" height="454.5"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Forgot your password?">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="16"/>
+                                                    <color key="baseForegroundColor" name="AccentColor"/>
+                                                </buttonConfiguration>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="VvN-bX-6QO" firstAttribute="leading" secondItem="Exi-8t-teZ" secondAttribute="leading" constant="20" id="6Id-LQ-abL"/>
+                                            <constraint firstItem="F3B-L1-slD" firstAttribute="top" secondItem="VvN-bX-6QO" secondAttribute="bottom" constant="25" id="A30-62-B4i"/>
+                                            <constraint firstAttribute="bottom" secondItem="F3B-L1-slD" secondAttribute="bottom" id="DKC-9k-gw0"/>
+                                            <constraint firstItem="VvN-bX-6QO" firstAttribute="top" secondItem="aax-Vf-4Df" secondAttribute="bottom" constant="25" id="EUG-MK-fhk"/>
+                                            <constraint firstItem="aax-Vf-4Df" firstAttribute="leading" secondItem="Exi-8t-teZ" secondAttribute="leading" constant="20" id="Smo-Pw-olC"/>
+                                            <constraint firstItem="F3B-L1-slD" firstAttribute="leading" secondItem="Exi-8t-teZ" secondAttribute="leading" constant="20" id="ekJ-K9-39t"/>
+                                            <constraint firstItem="aax-Vf-4Df" firstAttribute="top" secondItem="Exi-8t-teZ" secondAttribute="top" id="gSv-Jt-Xv9"/>
+                                            <constraint firstAttribute="trailing" secondItem="F3B-L1-slD" secondAttribute="trailing" constant="20" id="nU7-Ca-fUa"/>
+                                            <constraint firstItem="F3B-L1-slD" firstAttribute="top" secondItem="VvN-bX-6QO" secondAttribute="bottom" constant="25" id="oPg-pq-eHN"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8OY-i1-svA">
+                                        <rect key="frame" x="0.0" y="774" width="414" height="40"/>
+                                        <color key="backgroundColor" name="AccentColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="L2y-PN-kf5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Login">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8OY-i1-svA" secondAttribute="bottom" id="KE9-fk-g2F"/>
+                                    <constraint firstItem="8OY-i1-svA" firstAttribute="top" secondItem="Exi-8t-teZ" secondAttribute="bottom" id="cDv-jC-Psa"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="acR-sl-ate"/>
                         <color key="backgroundColor" name="GreyColor"/>
+                        <constraints>
+                            <constraint firstItem="acR-sl-ate" firstAttribute="trailing" secondItem="hwG-yM-Cgm" secondAttribute="trailing" id="Ao0-ea-HMQ"/>
+                            <constraint firstItem="acR-sl-ate" firstAttribute="bottom" secondItem="hwG-yM-Cgm" secondAttribute="bottom" id="JRV-My-AJT"/>
+                            <constraint firstItem="hwG-yM-Cgm" firstAttribute="leading" secondItem="acR-sl-ate" secondAttribute="leading" id="Lqz-q7-oRT"/>
+                            <constraint firstItem="hwG-yM-Cgm" firstAttribute="top" secondItem="acR-sl-ate" secondAttribute="top" id="TgN-P4-qKV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZo-gs-e4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -33,8 +114,14 @@
     </scenes>
     <resources>
         <image name="moneybox" width="300" height="70"/>
+        <namedColor name="AccentColor">
+            <color red="0.34299999475479126" green="0.75" blue="0.70999997854232788" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <namedColor name="GreyColor">
             <color red="0.94900000095367432" green="0.94900000095367432" blue="0.94900000095367432" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
     </resources>
 </document>
