@@ -41,9 +41,9 @@
                                     <constraint firstAttribute="height" constant="45" id="slc-2e-kHD"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plV-t7-E6Y">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="plV-t7-E6Y">
                                 <rect key="frame" x="30" y="412" width="354" height="32"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -51,7 +51,7 @@
                                     <color key="titleColor" name="AccentColor"/>
                                 </state>
                             </button>
-                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gM9-qN-iuo">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gM9-qN-iuo">
                                 <rect key="frame" x="30" y="529" width="354" height="50"/>
                                 <color key="backgroundColor" name="AccentColor"/>
                                 <constraints>
@@ -62,6 +62,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" name="GreyColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginPressed:" destination="nxe-uw-h5I" eventType="touchUpInside" id="ER1-jM-ZuG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="acR-sl-ate"/>
@@ -86,6 +89,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ABB-xp-niF"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="bbq-fV-sg6" id="2pB-o2-id4"/>
+                        <outlet property="passwordTextField" destination="f8j-yH-ycz" id="FKC-Si-8f4"/>
+                        <segue destination="oYf-jN-Gz3" kind="presentation" identifier="goToAccScreen" modalPresentationStyle="fullScreen" id="C3S-eh-RWz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cZo-gs-e4f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -101,10 +109,11 @@
                         <viewLayoutGuide key="safeArea" id="49v-LN-n6c"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="r5L-4d-kBw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7P4-jV-fWX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900.0000000000002" y="-51.5625"/>
+            <point key="canvasLocation" x="2122" y="-417"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Mwi-A6-iXl">
