@@ -27,5 +27,4 @@ final class DataProviderMock: XCTestCase {
             XCTAssertEqual(value.session.bearerToken, "GuQfJPpjUyJH10Og+hS9c0ttz4q2ZoOnEQBSBP2eAEs=")
         }
     }
-
 }

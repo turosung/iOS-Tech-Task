@@ -9,6 +9,7 @@ import UIKit
 import Networking
 
 class HomeRowTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var planValueLabel: UILabel!
     @IBOutlet weak var moneyboxLabel: UILabel!
@@ -40,7 +41,6 @@ class HomeRowTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
 

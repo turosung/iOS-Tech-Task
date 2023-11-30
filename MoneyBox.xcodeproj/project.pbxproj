@@ -169,8 +169,8 @@
 			isa = PBXGroup;
 			children = (
 				B2CA47662794D69A0041B3A5 /* StubData.swift */,
-				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
 				A872AB9A2B18AFCC00FD92F8 /* DataProviderMock.swift */,
+				B2CA47682794D6AC0041B3A5 /* ResponseJsons */,
 			);
 			path = MoneyBoxTests;
 			sourceTree = "<group>";

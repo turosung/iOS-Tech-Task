@@ -9,6 +9,7 @@ import UIKit
 import Networking
 
 class HomeViewController: UIViewController {
+    
     @IBOutlet weak var greetingLabel: UILabel!
     @IBOutlet weak var totalPlanValueLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -61,22 +62,37 @@ class HomeViewController: UIViewController {
                 }
             }
         }
-        
     }
-    
-    
-
 }
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return products.count
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = UIColor.clear
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: HomeRowTableViewCell.identifier, for: indexPath) as! HomeRowTableViewCell
-        cell.configure(productResponse: products[indexPath.row])
+        cell.configure(productResponse: products[indexPath.section])
+        
+        cell.layer.borderColor = UIColor.black.cgColor
+        cell.layer.borderWidth = 1
+        cell.layer.cornerRadius = 10
+        cell.clipsToBounds = true
         return cell
     }
     
@@ -85,8 +101,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let product = products[indexPath.row]
+        let product = products[indexPath.section]
         performSegue(withIdentifier: "ShowProductDetailSegue", sender: product)
     }
-    
 }

@@ -11,5 +11,4 @@ class SessionService {
     static let shared = SessionService()
     var user: UserModel?
     private init() {}
-    
 }
